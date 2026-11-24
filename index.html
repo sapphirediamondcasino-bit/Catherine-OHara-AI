@@ -177,7 +177,7 @@ body.chat-page{overflow:hidden}
 .convo-item{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:var(--radius);cursor:pointer;color:var(--muted);font-size:13.5px;border:1px solid transparent}
 .convo-item:hover{background:rgba(255,255,255,.03);color:var(--ink)}
 .convo-item.active{background:rgba(201,164,92,.09);border-color:var(--gold-dim);color:var(--ink)}
-.convo-item .title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.convo-item .title{flex:1;min-width:0;display:block;color:inherit;text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .convo-item .del{opacity:0;border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:15px;line-height:1;padding:2px 4px}
 .convo-item:hover .del{opacity:1}
 .convo-item .del:hover{color:var(--danger)}
@@ -418,9 +418,27 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     };
   })();
 
-  // A static page has no server to answer pretty URLs, so every route lives
-  // after the hash: #/chat, #/filmography, and so on.
-  var STATIC_MODE = true;
+  // Real address-bar paths — /chat, /filmography, /chat/12 — never #/chat.
+  // GitHub Pages cannot rewrite paths, so the build also writes a tiny 404.html
+  // that hands a deep link back to this document with its path preserved.
+  var APP_BASE = (function () {
+    var parts = (location.pathname || '/').split('/');
+    var last = parts[parts.length - 1] || '';
+    if (/\.[a-z0-9]+$/i.test(last)) {
+      parts.pop();                                  // .../index.html
+    } else if (last) {
+      parts.pop();                                  // /repo/chat
+      if (/^\d+$/.test(last)) parts.pop();          // /repo/chat/12
+    }
+    var base = parts.join('/');
+    if (base.charAt(0) !== '/') base = '/' + base;
+    if (base.charAt(base.length - 1) !== '/') base += '/';
+    return base;
+  })();
+
+  function urlFor(path) {
+    return APP_BASE.replace(/\/$/, '') + (path === '/' ? '/' : path);
+  }
 
   var SESSION_KEY = 'catherine:session';
   var session = null;
@@ -455,7 +473,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 
     if (params.get('error')) {
       oauthError = params.get('error_description') || params.get('error');
-      history.replaceState({}, '', location.pathname + location.search + '#/login');
+      history.replaceState({}, '', urlFor('/login'));
       return;
     }
 
@@ -466,14 +484,14 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     };
     saveSession();
     var next = consumeNext();
-    history.replaceState({}, '', location.pathname + location.search + '#' + (next || '/hub'));
+    history.replaceState({}, '', urlFor(next || '/hub'));
   })();
 
   function signInWithDiscord() {
     var next = currentPath();
     if (next === '/login' || next === '/register') next = '/chat';
     try { sessionStorage.setItem('catherine:next', next); } catch (err) {}
-    var redirect = location.origin + location.pathname;
+    var redirect = location.origin + APP_BASE;
     window.location.href =
       SUPABASE.url + '/auth/v1/authorize?provider=discord&redirect_to=' + encodeURIComponent(redirect);
   }
@@ -692,6 +710,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     meta: { languages: FALLBACK_LANGUAGES, filmography: [] },
     conversations: [],
     activeId: null,
+    chatRouteSegment: '',
     sending: false,
     status: null,
     photo: null,
@@ -777,7 +796,6 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         '<a href="/login">Sign in</a>' +
         '<a class="btn btn-sm" href="/chat">Talk to Catherine</a>';
     }
-    rewriteLinks($('#site-nav'));
   }
 
   function markNav(path) {
@@ -1169,18 +1187,10 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 
     $('#hub-recents').innerHTML = conversations.length
       ? '<ul class="recents">' + conversations.map(function (c) {
-          return '<li><a href="/chat" data-open="' + c.id + '"><span style="color:var(--ink)">' + esc(c.title) +
+          return '<li><a href="' + esc(chatHref(c)) + '"><span style="color:var(--ink)">' + esc(c.title) +
             '</span><span>' + esc((c.updated_at || '').slice(0, 10)) + '</span></a></li>';
         }).join('') + '</ul>'
       : '<p style="color:var(--muted);font-size:14px;margin:0">No conversations yet. Say hello above.</p>';
-
-    $$('#hub-recents [data-open]').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        sessionStorage.setItem('catherine:open', link.getAttribute('data-open'));
-        navigate('/chat');
-      });
-    });
 
     $('#hub-prompt-form').addEventListener('submit', function (event) {
       event.preventDefault();
@@ -1326,14 +1336,18 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     if (body) body.scrollTop = body.scrollHeight;
   }
 
+  function chatHref(c) {
+    return '/chat/' + (c.chat_number != null ? c.chat_number : c.id);
+  }
+
   function convoListHtml() {
     if (!state.conversations.length) {
       return '<p style="padding:8px 12px;font-size:12.5px;color:var(--muted)">No conversations yet.</p>';
     }
     return state.conversations.map(function (c) {
-      return '<div class="convo-item ' + (c.id === state.activeId ? 'active' : '') + '" data-id="' + c.id + '">' +
-        '<span class="title">' + esc(c.title) + '</span>' +
-        '<button class="del" data-del="' + c.id + '" aria-label="Delete conversation">×</button></div>';
+      return '<div class="convo-item ' + (c.id === state.activeId ? 'active' : '') + '">' +
+        '<a class="title" href="' + esc(chatHref(c)) + '" data-id="' + esc(c.id) + '">' + esc(c.title) + '</a>' +
+        '<button class="del" data-del="' + esc(c.id) + '" aria-label="Delete conversation">×</button></div>';
     }).join('');
   }
 
@@ -1347,9 +1361,28 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     return supabaseArray('/rest/v1/rpc/list_conversations', { method: 'POST', body: {} });
   }
 
+  // The short numbers used in /chat/12. They live in an optional column, so an
+  // older database simply keeps the uuid addresses instead of breaking.
+  async function loadChatNumbers() {
+    try {
+      var rows = await supabaseArray('/rest/v1/conversations?select=id,chat_number');
+      var map = {};
+      rows.forEach(function (row) {
+        if (row.chat_number != null) map[row.id] = row.chat_number;
+      });
+      return map;
+    } catch (err) {
+      return {};
+    }
+  }
+
   async function refreshConversations() {
     try {
       state.conversations = await loadConversations();
+      var numbers = await loadChatNumbers();
+      state.conversations.forEach(function (c) {
+        if (numbers[c.id] != null) c.chat_number = numbers[c.id];
+      });
       renderConvoList();
     } catch (err) { /* non-fatal */ }
   }
@@ -1371,9 +1404,10 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     );
   }
 
-  async function openConversation(id) {
+  async function openConversation(id, options) {
     state.activeId = id;
     renderConvoList();
+    setChatPath(id, options);
     var list = $('#messages');
     if (!list) return;
     list.innerHTML = '';
@@ -1397,6 +1431,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   function newConversation() {
     state.activeId = null;
     renderConvoList();
+    if (/^\/chat(\/|$)/.test(currentPath())) history.replaceState({}, '', urlFor('/chat'));
     $('#chat-title').textContent = 'New conversation';
     $('#messages').innerHTML = emptyChatHtml();
     bindChips();
@@ -1472,9 +1507,12 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 
       if (!state.activeId) {
         var conversation = await createConversation();
+        var numbers = await loadChatNumbers();
+        if (numbers[conversation.id] != null) conversation.chat_number = numbers[conversation.id];
         state.activeId = conversation.id;
         state.conversations.unshift(conversation);
         renderConvoList();
+        setChatPath(conversation.id, { replace: true });
       }
 
       var issued = await api('/rest/v1/rpc/queue_chat_message', {
@@ -1538,8 +1576,8 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         } catch (err) { toast(err.message); }
         return;
       }
-      var item = event.target.closest('[data-id]');
-      if (item) openConversation(item.getAttribute('data-id'));
+      var item = event.target.closest('a[data-id]');
+      if (item) return; // the page-wide link handler opens /chat/<number>
     });
 
     var form = $('#composer');
@@ -1563,15 +1601,21 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       sendMessage(value);
     });
 
-    var wanted = sessionStorage.getItem('catherine:open');
+    var wanted = state.chatRouteSegment || sessionStorage.getItem('catherine:open');
     sessionStorage.removeItem('catherine:open');
+    var target = null;
     if (wanted) {
-      openConversation(wanted);
+      var match = state.conversations.filter(function (c) {
+        return String(c.chat_number) === String(wanted) || c.id === wanted;
+      })[0];
+      if (match) target = match.id;
+    }
+    if (target) {
+      openConversation(target, { replace: true });
     } else if (state.conversations.length) {
-      openConversation(state.conversations[0].id);
+      openConversation(state.conversations[0].id, { replace: true });
     } else {
-      $('#messages').innerHTML = emptyChatHtml();
-      bindChips();
+      newConversation();
     }
 
     var draft = sessionStorage.getItem('catherine:draft');
@@ -1731,55 +1775,83 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     '/admin': { page: adminPage, title: 'Admin', init: initAdmin, auth: true, admin: true }
   };
 
+  // Catherine's own lines, usable as addresses. They land on the plain page
+  // they belong to, so the address bar never needs a #.
+  var PHRASE_ROUTES = {
+    '/bebe': '/chat',
+    '/kevin': '/',
+    '/fold-in-the-cheese': '/games',
+    '/the-crows-have-eyes': '/filmography'
+  };
+
   function currentPath() {
-    var hash = location.hash.replace(/^#/, '');
-    var route = hash.split('?')[0] || '/';
-    if (route.charAt(0) !== '/') route = '/' + route;
-    return route.replace(/\/+$/, '') || '/';
+    var path = location.pathname || '/';
+    if (path.indexOf(APP_BASE) === 0) path = path.slice(APP_BASE.length - 1);
+    path = path.split('?')[0] || '/';
+    if (path === '/index.html' || path === '/catherine-website.html') path = '/';
+    if (path.charAt(0) !== '/') path = '/' + path;
+    return path.replace(/\/+$/, '') || '/';
   }
 
   function currentSearch() {
-    var hash = location.hash;
-    var index = hash.indexOf('?');
-    return index >= 0 ? hash.slice(index) : '';
-  }
-
-  function rewriteLinks(root) {
-    if (!STATIC_MODE) return;
-    $$('a[href^="/"]', root || document).forEach(function (link) {
-      link.setAttribute('href', '#' + link.getAttribute('href'));
-    });
+    return location.search || '';
   }
 
   function navigate(path, options) {
     var opts = options || {};
-    var hash = '#' + path;
+    var target = urlFor(path);
 
-    if (location.hash === hash) {
+    if (location.pathname + location.search === target) {
       render();
       return;
     }
-    if (opts.replace) {
-      history.replaceState({}, '', location.pathname + location.search + hash);
-      render();
-    } else {
-      location.hash = path;
-    }
+    if (opts.replace) history.replaceState({}, '', target);
+    else history.pushState({}, '', target);
+    render();
+  }
+
+  function setChatPath(id, options) {
+    var opts = options || {};
+    var current = state.conversations.filter(function (c) { return c.id === id; })[0];
+    var segment = current && current.chat_number != null ? current.chat_number : id;
+    var target = urlFor('/chat/' + segment);
+    if (location.pathname + location.search === target) return;
+    if (opts.replace) history.replaceState({}, '', target);
+    else history.pushState({}, '', target);
   }
 
   async function render() {
     var path = currentPath();
     var route = ROUTES[path];
+    var segment = '';
+
+    if (!route && PHRASE_ROUTES[path]) {
+      path = PHRASE_ROUTES[path];
+      route = ROUTES[path];
+      history.replaceState({}, '', urlFor(path));
+    }
+    if (!route) {
+      var match = path.match(/^\/chat\/([^/]+)$/);
+      if (match) {
+        route = ROUTES['/chat'];
+        segment = decodeURIComponent(match[1]);
+        path = '/chat';
+      }
+    }
+    state.chatRouteSegment = segment;
+
     var nav = $('#site-nav');
     if (nav) nav.classList.remove('open');
 
     if (state.guest && (path === '/hub' || path === '/account' || path === '/admin')) {
       path = '/login';
       route = ROUTES['/login'];
+      state.chatRouteSegment = '';
     }
     if (route && route.auth && !state.user) {
       path = '/login';
       route = ROUTES['/login'];
+      state.chatRouteSegment = '';
     }
     if (route && route.admin && state.user && state.user.role !== 'admin') {
       app.innerHTML = notFoundPage();
@@ -1790,7 +1862,6 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     app.innerHTML = route ? route.page() : notFoundPage();
     document.title = (route ? route.title : 'Page not found') + " · Catherine O'Hara AI";
     markNav(path);
-    rewriteLinks(app);
 
     if (route && route.init) {
       try { await route.init(); } catch (err) { toast(err.message); }
@@ -1835,6 +1906,20 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   }
 
   async function boot() {
+    // A 404.html hand-off stores the path it was asked for; restore it here so
+    // /chat/12 survives a refresh on GitHub Pages.
+    var recovered = '';
+    try {
+      recovered = sessionStorage.getItem('catherine:path') || '';
+      sessionStorage.removeItem('catherine:path');
+    } catch (err) { recovered = ''; }
+    if (recovered) history.replaceState({}, '', recovered);
+
+    var legacyHash = location.hash || '';
+    if (legacyHash.indexOf('#/') === 0) {
+      history.replaceState({}, '', urlFor(legacyHash.slice(1).split('?')[0] || '/'));
+    }
+
     $('#year').textContent = new Date().getFullYear();
     await probePortraits();
 
@@ -1847,14 +1932,13 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       var link = event.target.closest('a[href]');
       if (!link) return;
       var href = link.getAttribute('href');
-      if (!href || href.charAt(0) !== '/' || link.target === '_blank') return;
+      if (!href || href.charAt(0) !== '/' || link.target === '_blank' || link.hasAttribute('download')) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button) return;
       event.preventDefault();
       navigate(href);
     });
 
     window.addEventListener('popstate', function () { render(); });
-    window.addEventListener('hashchange', function () { render(); });
-    rewriteLinks(document);
 
     if (session) {
       try {
