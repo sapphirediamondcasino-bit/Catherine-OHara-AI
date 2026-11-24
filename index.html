@@ -319,10 +319,17 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 .recents a{display:flex;justify-content:space-between;gap:12px;padding:11px 0;font-size:14px}
 .recents a span{color:var(--muted);font-size:12px;white-space:nowrap}
 @media (max-width:1020px){.hub-grid{grid-template-columns:1fr}}
+
+/* auth providers */
+.discord-btn{width:100%;gap:12px}
+.provider-list{margin:22px 0 0;border-top:1px solid var(--line)}
+.provider{display:flex;align-items:center;justify-content:space-between;padding:12px 2px;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+.provider em{font-style:normal;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);padding:3px 8px;border-radius:999px;color:var(--muted)}
+.auth-note{font-size:12.5px;color:var(--muted);margin:20px 0 0;line-height:1.6}
 </style>
 </head>
 <body>
-<script>window.CATHERINE_IMAGES = {"portrait":null,"thumbs":[]};window.CATHERINE_DATA = {"filmography":[{"year":"1980","title":"Nothing Personal","role":"Audrey","kind":"Film"},{"year":"1980","title":"Deadly Companion","role":"Judith","kind":"Film"},{"year":"1983","title":"Rock & Rule","role":"Aunt Edith (voice)","kind":"Film"},{"year":"1985","title":"After Hours","role":"Gail","kind":"Film"},{"year":"1986","title":"Heartburn","role":"Betty","kind":"Film"},{"year":"1988","title":"Beetlejuice","role":"Delia Deetz","kind":"Film","featured":true},{"year":"1990","title":"Dick Tracy","role":"Texie Garcia","kind":"Film"},{"year":"1990","title":"Betsy's Wedding","role":"Gloria Henner","kind":"Film"},{"year":"1990","title":"Home Alone","role":"Kate McCallister","kind":"Film","featured":true},{"year":"1990","title":"Little Vegas","role":"Lexie","kind":"Film"},{"year":"1992","title":"There Goes the Neighborhood","role":"Jessica Lodge","kind":"Film"},{"year":"1992","title":"Home Alone 2: Lost in New York","role":"Kate McCallister","kind":"Film","featured":true},{"year":"1993","title":"The Nightmare Before Christmas","role":"Sally / Shock (voice)","kind":"Film","featured":true},{"year":"1994","title":"The Paper","role":"Susan","kind":"Film"},{"year":"1994","title":"Wyatt Earp","role":"Allie Earp","kind":"Film"},{"year":"1994","title":"A Simple Twist of Fate","role":"April Simon","kind":"Film"},{"year":"1995","title":"Tall Tale","role":"Calamity Jane","kind":"Film"},{"year":"1996","title":"Waiting for Guffman","role":"Sheila Albertson","kind":"Film","featured":true},{"year":"1996","title":"The Last of the High Kings","role":"Cathleen","kind":"Film"},{"year":"1997","title":"Pippi Longstocking","role":"Mrs. Prysselius (voice)","kind":"Film"},{"year":"1998","title":"Home Fries","role":"Beatrice Lever","kind":"Film"},{"year":"1999","title":"The Life Before This","role":"Sheena","kind":"Film"},{"year":"1999","title":"Bartok the Magnificent","role":"Ludmilla (voice)","kind":"Film"},{"year":"2000","title":"Best in Show","role":"Cookie Fleck","kind":"Film","featured":true},{"year":"2000","title":"Edwurd Fudwupper Fibbed Big","role":"Lorna Mae Loon (voice)","kind":"Film"},{"year":"2001","title":"Speaking of Sex","role":"Connie Barker","kind":"Film"},{"year":"2002","title":"Orange County","role":"Cindy Beugler","kind":"Film"},{"year":"2002","title":"Searching for Debra Winger","role":"Herself","kind":"Film"},{"year":"2003","title":"A Mighty Wind","role":"Mickey Crabbe","kind":"Film","featured":true},{"year":"2004","title":"Surviving Christmas","role":"Christine Valco","kind":"Film"},{"year":"2004","title":"Lemony Snicket's A Series of Unfortunate Events","role":"Justice Strauss","kind":"Film"},{"year":"2005","title":"Game 6","role":"Lillian Rogan","kind":"Film"},{"year":"2005","title":"Chicken Little","role":"Tina (voice)","kind":"Film"},{"year":"2006","title":"Over the Hedge","role":"Penny (voice)","kind":"Film"},{"year":"2006","title":"Monster House","role":"Mrs. Walters (voice)","kind":"Film"},{"year":"2006","title":"Brother Bear 2","role":"Kata (voice)","kind":"Film"},{"year":"2006","title":"Penelope","role":"Jessica Wilhern","kind":"Film"},{"year":"2006","title":"For Your Consideration","role":"Marilyn Hack","kind":"Film","featured":true},{"year":"2006","title":"Barbie in the 12 Dancing Princesses","role":"Rowena (voice)","kind":"Film"},{"year":"2009","title":"Away We Go","role":"Gloria Farlander","kind":"Film"},{"year":"2009","title":"Where the Wild Things Are","role":"Judith (voice)","kind":"Film"},{"year":"2010","title":"Killers","role":"Mrs. Kornfeldt","kind":"Film"},{"year":"2011","title":"A Monster in Paris","role":"Madame Carlotta (voice)","kind":"Film"},{"year":"2012","title":"Frankenweenie","role":"Susan Frankenstein / Gym Teacher / Weird Girl (voices)","kind":"Film","featured":true},{"year":"2013","title":"A.C.O.D.","role":"Melissa","kind":"Film"},{"year":"2013","title":"The Right Kind of Wrong","role":"Tess","kind":"Film"},{"year":"2014","title":"When Marnie Was There","role":"Old Marnie (voice)","kind":"Film"},{"year":"2015","title":"Being Canadian","role":"Herself","kind":"Film"},{"year":"2019","title":"The Addams Family","role":"Grandma Frump (voice)","kind":"Film","featured":true},{"year":"2020","title":"Canada Far and Wide","role":"Narrator (voice)","kind":"Film"},{"year":"2021","title":"Extinct","role":"Alma (voice)","kind":"Film"},{"year":"2021","title":"Back Home Again","role":"Mayor Owl (voice)","kind":"Film"},{"year":"2023","title":"Elemental","role":"Brook Ripple (voice)","kind":"Film","featured":true},{"year":"2023","title":"Pain Hustlers","role":"Jackie Drake","kind":"Film"},{"year":"2024","title":"Argylle","role":"Ruth","kind":"Film","featured":true},{"year":"2024","title":"Beetlejuice Beetlejuice","role":"Delia Deetz","kind":"Film","featured":true},{"year":"2024","title":"The Wild Robot","role":"Pinktail (voice)","kind":"Film","featured":true},{"year":"2025","title":"John Candy: I Like Me","role":"Herself","kind":"Documentary"},{"year":"2026","title":"Marty, Life Is Short","role":"Herself (archival)","kind":"Documentary"},{"year":"2026","title":"SCTV: The Greatest Show You've Never Heard Of","role":"Herself (archival)","kind":"Documentary"},{"year":"1975","title":"Wayne and Shuster","role":"Various","kind":"TV"},{"year":"1975–1977","title":"Coming Up Rosie","role":"Marna Wallbacker","kind":"TV"},{"year":"1976","title":"The Rimshots","role":"Maggie","kind":"TV"},{"year":"1976–1984","title":"Second City Television","role":"Various","kind":"TV","featured":true},{"year":"1977","title":"Fit To Print","role":"Various","kind":"TV film"},{"year":"1978","title":"Witch's Night Out","role":"Malicious (voice)","kind":"TV"},{"year":"1979","title":"Intergalactic Thanksgiving","role":"Ma Spademinder (voice)","kind":"TV"},{"year":"1980","title":"Easter Fever","role":"Scarlett O'Hare (voice)","kind":"TV"},{"year":"1980","title":"From Cleveland","role":"Various","kind":"TV"},{"year":"1980","title":"You've Come a Long Way, Katie","role":"Chris Dougherty","kind":"TV"},{"year":"1984","title":"The New Show","role":"Various","kind":"TV"},{"year":"1985","title":"The Last Polka","role":"Lemon Twin","kind":"TV"},{"year":"1985","title":"George Burns Comedy Week","role":"Sally","kind":"TV"},{"year":"1986","title":"Dave Thomas: The Incredible Time Travels of Henry Osgood","role":"Marie Antoinette","kind":"TV"},{"year":"1986","title":"Really Weird Tales","role":"Theresa Sharpe","kind":"TV"},{"year":"1987","title":"Trying Times","role":"Rebecca","kind":"TV"},{"year":"1988","title":"The Completely Mental Misadventures of Ed Grimley","role":"Miss Malone (voice)","kind":"TV"},{"year":"1989","title":"I, Martin Short, Goes Hollywood","role":"Nancy Mae","kind":"TV"},{"year":"1989","title":"Andrea Martin... Together Again","role":"Various","kind":"TV"},{"year":"1990","title":"The Dave Thomas Comedy Show","role":"Various","kind":"TV"},{"year":"1990","title":"Dream On","role":"Irma","kind":"TV"},{"year":"1991","title":"Morton & Hayes","role":"Amelia von Astor","kind":"TV"},{"year":"1991","title":"Married... with Children","role":"Female Dog","kind":"TV"},{"year":"1993","title":"The Hidden Room","role":"Laurel Brody","kind":"TV"},{"year":"1994","title":"Tales from the Crypt","role":"Geraldine Ferrett","kind":"TV"},{"year":"1997","title":"The Outer Limits","role":"Becka Paulson","kind":"TV"},{"year":"1997","title":"Hope","role":"Muriel Macswain","kind":"TV film"},{"year":"1999","title":"Late Last Night","role":"Shrink","kind":"TV film"},{"year":"1999","title":"Oh Baby","role":"Roberta Hunter","kind":"TV"},{"year":"2001","title":"Committed","role":"Liz Larsen (voice)","kind":"TV"},{"year":"2002","title":"Bram & Alice","role":"Ms. O'Connor","kind":"TV"},{"year":"2002","title":"Dr. Katz, Professional Therapist","role":"Catherine (voice)","kind":"TV"},{"year":"2003","title":"Odd Job Jack","role":"Claudia Johnson","kind":"TV"},{"year":"2003–2005","title":"Six Feet Under","role":"Carol Ward","kind":"TV","featured":true},{"year":"2004","title":"The Wool Cap","role":"Gloria","kind":"TV film"},{"year":"2008","title":"Good Behavior","role":"Jackie West","kind":"TV film"},{"year":"2009","title":"Curb Your Enthusiasm","role":"Bam Bam","kind":"TV","featured":true},{"year":"2009–2011","title":"Glenn Martin, DDS","role":"Jackie Martin (voice)","kind":"TV"},{"year":"2010","title":"Temple Grandin","role":"Aunt Ann","kind":"TV film","featured":true},{"year":"2012","title":"Leslie","role":"Leslie","kind":"TV"},{"year":"2012","title":"30 Rock","role":"Pearline","kind":"TV"},{"year":"2013","title":"The Greatest Event in Television History","role":"Muriel Rush","kind":"TV"},{"year":"2013","title":"To My Future Assistant","role":"Magda","kind":"TV film"},{"year":"2015","title":"What Lives Inside","role":"Sarah Delaney","kind":"TV"},{"year":"2015–2020","title":"Schitt's Creek","role":"Moira Rose","kind":"TV","featured":true},{"year":"2015","title":"Modern Family","role":"Dr. Debra Radcliffe","kind":"TV"},{"year":"2016","title":"Sofia the First","role":"Morgana (voice)","kind":"TV"},{"year":"2016","title":"Harvey Beaks","role":"Miley Page (voice)","kind":"TV"},{"year":"2016–2018","title":"Skylanders Academy","role":"Kaossandra (voice)","kind":"TV"},{"year":"2017–2019","title":"A Series of Unfortunate Events","role":"Dr. Georgina Orwell","kind":"TV","featured":true},{"year":"2018","title":"The Magic School Bus Rides Again","role":"Aunt Tennelli / Teresina Tennelli (voices)","kind":"TV"},{"year":"2019–2020","title":"The Last Kids on Earth","role":"Skaelka (voice)","kind":"TV"},{"year":"2022","title":"Central Park","role":"Gwendolyn Swish (voice)","kind":"TV"},{"year":"2022","title":"The Kids in the Hall","role":"Charlene","kind":"TV"},{"year":"2025","title":"The Studio","role":"Patty Leigh","kind":"TV","featured":true},{"year":"2025","title":"The Last of Us","role":"Gail Lynden","kind":"TV","featured":true}]};</script>
+<script>window.CATHERINE_IMAGES = {"portrait":null,"thumbs":[]};window.CATHERINE_DATA = {"filmography":[{"year":"1980","title":"Nothing Personal","role":"Audrey","kind":"Film"},{"year":"1980","title":"Deadly Companion","role":"Judith","kind":"Film"},{"year":"1983","title":"Rock & Rule","role":"Aunt Edith (voice)","kind":"Film"},{"year":"1985","title":"After Hours","role":"Gail","kind":"Film"},{"year":"1986","title":"Heartburn","role":"Betty","kind":"Film"},{"year":"1988","title":"Beetlejuice","role":"Delia Deetz","kind":"Film","featured":true},{"year":"1990","title":"Dick Tracy","role":"Texie Garcia","kind":"Film"},{"year":"1990","title":"Betsy's Wedding","role":"Gloria Henner","kind":"Film"},{"year":"1990","title":"Home Alone","role":"Kate McCallister","kind":"Film","featured":true},{"year":"1990","title":"Little Vegas","role":"Lexie","kind":"Film"},{"year":"1992","title":"There Goes the Neighborhood","role":"Jessica Lodge","kind":"Film"},{"year":"1992","title":"Home Alone 2: Lost in New York","role":"Kate McCallister","kind":"Film","featured":true},{"year":"1993","title":"The Nightmare Before Christmas","role":"Sally / Shock (voice)","kind":"Film","featured":true},{"year":"1994","title":"The Paper","role":"Susan","kind":"Film"},{"year":"1994","title":"Wyatt Earp","role":"Allie Earp","kind":"Film"},{"year":"1994","title":"A Simple Twist of Fate","role":"April Simon","kind":"Film"},{"year":"1995","title":"Tall Tale","role":"Calamity Jane","kind":"Film"},{"year":"1996","title":"Waiting for Guffman","role":"Sheila Albertson","kind":"Film","featured":true},{"year":"1996","title":"The Last of the High Kings","role":"Cathleen","kind":"Film"},{"year":"1997","title":"Pippi Longstocking","role":"Mrs. Prysselius (voice)","kind":"Film"},{"year":"1998","title":"Home Fries","role":"Beatrice Lever","kind":"Film"},{"year":"1999","title":"The Life Before This","role":"Sheena","kind":"Film"},{"year":"1999","title":"Bartok the Magnificent","role":"Ludmilla (voice)","kind":"Film"},{"year":"2000","title":"Best in Show","role":"Cookie Fleck","kind":"Film","featured":true},{"year":"2000","title":"Edwurd Fudwupper Fibbed Big","role":"Lorna Mae Loon (voice)","kind":"Film"},{"year":"2001","title":"Speaking of Sex","role":"Connie Barker","kind":"Film"},{"year":"2002","title":"Orange County","role":"Cindy Beugler","kind":"Film"},{"year":"2002","title":"Searching for Debra Winger","role":"Herself","kind":"Film"},{"year":"2003","title":"A Mighty Wind","role":"Mickey Crabbe","kind":"Film","featured":true},{"year":"2004","title":"Surviving Christmas","role":"Christine Valco","kind":"Film"},{"year":"2004","title":"Lemony Snicket's A Series of Unfortunate Events","role":"Justice Strauss","kind":"Film"},{"year":"2005","title":"Game 6","role":"Lillian Rogan","kind":"Film"},{"year":"2005","title":"Chicken Little","role":"Tina (voice)","kind":"Film"},{"year":"2006","title":"Over the Hedge","role":"Penny (voice)","kind":"Film"},{"year":"2006","title":"Monster House","role":"Mrs. Walters (voice)","kind":"Film"},{"year":"2006","title":"Brother Bear 2","role":"Kata (voice)","kind":"Film"},{"year":"2006","title":"Penelope","role":"Jessica Wilhern","kind":"Film"},{"year":"2006","title":"For Your Consideration","role":"Marilyn Hack","kind":"Film","featured":true},{"year":"2006","title":"Barbie in the 12 Dancing Princesses","role":"Rowena (voice)","kind":"Film"},{"year":"2009","title":"Away We Go","role":"Gloria Farlander","kind":"Film"},{"year":"2009","title":"Where the Wild Things Are","role":"Judith (voice)","kind":"Film"},{"year":"2010","title":"Killers","role":"Mrs. Kornfeldt","kind":"Film"},{"year":"2011","title":"A Monster in Paris","role":"Madame Carlotta (voice)","kind":"Film"},{"year":"2012","title":"Frankenweenie","role":"Susan Frankenstein / Gym Teacher / Weird Girl (voices)","kind":"Film","featured":true},{"year":"2013","title":"A.C.O.D.","role":"Melissa","kind":"Film"},{"year":"2013","title":"The Right Kind of Wrong","role":"Tess","kind":"Film"},{"year":"2014","title":"When Marnie Was There","role":"Old Marnie (voice)","kind":"Film"},{"year":"2015","title":"Being Canadian","role":"Herself","kind":"Film"},{"year":"2019","title":"The Addams Family","role":"Grandma Frump (voice)","kind":"Film","featured":true},{"year":"2020","title":"Canada Far and Wide","role":"Narrator (voice)","kind":"Film"},{"year":"2021","title":"Extinct","role":"Alma (voice)","kind":"Film"},{"year":"2021","title":"Back Home Again","role":"Mayor Owl (voice)","kind":"Film"},{"year":"2023","title":"Elemental","role":"Brook Ripple (voice)","kind":"Film","featured":true},{"year":"2023","title":"Pain Hustlers","role":"Jackie Drake","kind":"Film"},{"year":"2024","title":"Argylle","role":"Ruth","kind":"Film","featured":true},{"year":"2024","title":"Beetlejuice Beetlejuice","role":"Delia Deetz","kind":"Film","featured":true},{"year":"2024","title":"The Wild Robot","role":"Pinktail (voice)","kind":"Film","featured":true},{"year":"2025","title":"John Candy: I Like Me","role":"Herself","kind":"Documentary"},{"year":"2026","title":"Marty, Life Is Short","role":"Herself (archival)","kind":"Documentary"},{"year":"2026","title":"SCTV: The Greatest Show You've Never Heard Of","role":"Herself (archival)","kind":"Documentary"},{"year":"1975","title":"Wayne and Shuster","role":"Various","kind":"TV"},{"year":"1975–1977","title":"Coming Up Rosie","role":"Marna Wallbacker","kind":"TV"},{"year":"1976","title":"The Rimshots","role":"Maggie","kind":"TV"},{"year":"1976–1984","title":"Second City Television","role":"Various","kind":"TV","featured":true},{"year":"1977","title":"Fit To Print","role":"Various","kind":"TV film"},{"year":"1978","title":"Witch's Night Out","role":"Malicious (voice)","kind":"TV"},{"year":"1979","title":"Intergalactic Thanksgiving","role":"Ma Spademinder (voice)","kind":"TV"},{"year":"1980","title":"Easter Fever","role":"Scarlett O'Hare (voice)","kind":"TV"},{"year":"1980","title":"From Cleveland","role":"Various","kind":"TV"},{"year":"1980","title":"You've Come a Long Way, Katie","role":"Chris Dougherty","kind":"TV"},{"year":"1984","title":"The New Show","role":"Various","kind":"TV"},{"year":"1985","title":"The Last Polka","role":"Lemon Twin","kind":"TV"},{"year":"1985","title":"George Burns Comedy Week","role":"Sally","kind":"TV"},{"year":"1986","title":"Dave Thomas: The Incredible Time Travels of Henry Osgood","role":"Marie Antoinette","kind":"TV"},{"year":"1986","title":"Really Weird Tales","role":"Theresa Sharpe","kind":"TV"},{"year":"1987","title":"Trying Times","role":"Rebecca","kind":"TV"},{"year":"1988","title":"The Completely Mental Misadventures of Ed Grimley","role":"Miss Malone (voice)","kind":"TV"},{"year":"1989","title":"I, Martin Short, Goes Hollywood","role":"Nancy Mae","kind":"TV"},{"year":"1989","title":"Andrea Martin... Together Again","role":"Various","kind":"TV"},{"year":"1990","title":"The Dave Thomas Comedy Show","role":"Various","kind":"TV"},{"year":"1990","title":"Dream On","role":"Irma","kind":"TV"},{"year":"1991","title":"Morton & Hayes","role":"Amelia von Astor","kind":"TV"},{"year":"1991","title":"Married... with Children","role":"Female Dog","kind":"TV"},{"year":"1993","title":"The Hidden Room","role":"Laurel Brody","kind":"TV"},{"year":"1994","title":"Tales from the Crypt","role":"Geraldine Ferrett","kind":"TV"},{"year":"1997","title":"The Outer Limits","role":"Becka Paulson","kind":"TV"},{"year":"1997","title":"Hope","role":"Muriel Macswain","kind":"TV film"},{"year":"1999","title":"Late Last Night","role":"Shrink","kind":"TV film"},{"year":"1999","title":"Oh Baby","role":"Roberta Hunter","kind":"TV"},{"year":"2001","title":"Committed","role":"Liz Larsen (voice)","kind":"TV"},{"year":"2002","title":"Bram & Alice","role":"Ms. O'Connor","kind":"TV"},{"year":"2002","title":"Dr. Katz, Professional Therapist","role":"Catherine (voice)","kind":"TV"},{"year":"2003","title":"Odd Job Jack","role":"Claudia Johnson","kind":"TV"},{"year":"2003–2005","title":"Six Feet Under","role":"Carol Ward","kind":"TV","featured":true},{"year":"2004","title":"The Wool Cap","role":"Gloria","kind":"TV film"},{"year":"2008","title":"Good Behavior","role":"Jackie West","kind":"TV film"},{"year":"2009","title":"Curb Your Enthusiasm","role":"Bam Bam","kind":"TV","featured":true},{"year":"2009–2011","title":"Glenn Martin, DDS","role":"Jackie Martin (voice)","kind":"TV"},{"year":"2010","title":"Temple Grandin","role":"Aunt Ann","kind":"TV film","featured":true},{"year":"2012","title":"Leslie","role":"Leslie","kind":"TV"},{"year":"2012","title":"30 Rock","role":"Pearline","kind":"TV"},{"year":"2013","title":"The Greatest Event in Television History","role":"Muriel Rush","kind":"TV"},{"year":"2013","title":"To My Future Assistant","role":"Magda","kind":"TV film"},{"year":"2015","title":"What Lives Inside","role":"Sarah Delaney","kind":"TV"},{"year":"2015–2020","title":"Schitt's Creek","role":"Moira Rose","kind":"TV","featured":true},{"year":"2015","title":"Modern Family","role":"Dr. Debra Radcliffe","kind":"TV"},{"year":"2016","title":"Sofia the First","role":"Morgana (voice)","kind":"TV"},{"year":"2016","title":"Harvey Beaks","role":"Miley Page (voice)","kind":"TV"},{"year":"2016–2018","title":"Skylanders Academy","role":"Kaossandra (voice)","kind":"TV"},{"year":"2017–2019","title":"A Series of Unfortunate Events","role":"Dr. Georgina Orwell","kind":"TV","featured":true},{"year":"2018","title":"The Magic School Bus Rides Again","role":"Aunt Tennelli / Teresina Tennelli (voices)","kind":"TV"},{"year":"2019–2020","title":"The Last Kids on Earth","role":"Skaelka (voice)","kind":"TV"},{"year":"2022","title":"Central Park","role":"Gwendolyn Swish (voice)","kind":"TV"},{"year":"2022","title":"The Kids in the Hall","role":"Charlene","kind":"TV"},{"year":"2025","title":"The Studio","role":"Patty Leigh","kind":"TV","featured":true},{"year":"2025","title":"The Last of Us","role":"Gail Lynden","kind":"TV","featured":true}],"languages":[{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"es-PR","name":"Puerto Rican Spanish"},{"code":"fr","name":"French"},{"code":"de","name":"German"},{"code":"it","name":"Italian"},{"code":"pt-BR","name":"Brazilian Portuguese"},{"code":"sv","name":"Swedish"},{"code":"nl","name":"Dutch"}]};window.CATHERINE_SUPABASE = {"url":"https://ywkxjqlqlupyxmjxxpnr.supabase.co","key":"sb_publishable_MT4Q62_ETqYUGbu9Gjgm3Q_9_-yBbh1"};</script>
 
 <header class="topbar">
   <div class="wrap topbar-inner">
@@ -370,8 +377,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       <div>
         <h4>Account</h4>
         <a href="/hub">Your hub</a>
-        <a href="/login">Sign in</a>
-        <a href="/register">Create account</a>
+        <a href="/login">Sign in with Discord</a>
         <a href="/account">Settings</a>
         <a href="/admin">Admin</a>
       </div>
@@ -386,7 +392,8 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 <div id="toast" role="status" aria-live="polite"></div>
 
 <script>
-/* Catherine O'Hara AI — one-file site. All views, styles and behaviour live in this document. */
+/* Catherine O'Hara AI — one-file site. All views, styles and behaviour live in this document.
+   Backend: Supabase (auth + Postgres + row-level security). No server of ours is called. */
 (function () {
   'use strict';
 
@@ -394,39 +401,208 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
   var app = $('#app');
 
-  // ---- Backend location -------------------------------------------------
-  // Empty means "same origin" (the Node server serves this file). A static
-  // copy hosted on GitHub Pages points here at the bot backend, either with
-  // ?api=https://your-backend (saved locally) or by setting
-  // window.CATHERINE_API_BASE in this file.
-  var API_BASE = (function () {
-    var fromQuery = new URLSearchParams(location.search).get('api');
-    if (fromQuery) {
-      try { localStorage.setItem('catherine:api', fromQuery); } catch (err) {}
-    }
-    var stored = '';
-    try { stored = localStorage.getItem('catherine:api') || ''; } catch (err) {}
-    return String(window.CATHERINE_API_BASE || stored || '').replace(/\/+$/, '');
+  // ---- Supabase ----------------------------------------------------------
+  // The publishable key is public by design; row-level security decides what
+  // a signed-in person can read and write. `npm run build:static` bakes these
+  // values in, and window.CATHERINE_SUPABASE can override them.
+  var SUPABASE = (function () {
+    var injected = window.CATHERINE_SUPABASE || {};
+    return {
+      url: String(injected.url || 'https://ywkxjqlqlupyxmjxxpnr.supabase.co').replace(/\/+$/, ''),
+      key: String(injected.key || 'sb_publishable_MT4Q62_ETqYUGbu9Gjgm3Q_9_-yBbh1')
+    };
   })();
 
-  // A static copy (GitHub Pages, file://) cannot use pushState under a repo
-  // path, so it uses hash routes instead: #/chat, #/hub, and so on.
-  var STATIC_MODE =
-    Boolean(API_BASE) || location.protocol === 'file:' || /\.github\.io$/.test(location.hostname);
+  // A static page has no server to answer pretty URLs, so every route lives
+  // after the hash: #/chat, #/filmography, and so on.
+  var STATIC_MODE = true;
 
-  var TOKEN_KEY = 'catherine:token';
-  function sessionToken() {
-    try { return API_BASE ? localStorage.getItem(TOKEN_KEY) : null; } catch (err) { return null; }
+  var SESSION_KEY = 'catherine:session';
+  var session = null;
+  try { session = JSON.parse(localStorage.getItem(SESSION_KEY) || 'null'); } catch (err) { session = null; }
+  if (!session || !session.access_token) session = null;
+
+  function saveSession() {
+    try { localStorage.setItem(SESSION_KEY, JSON.stringify(session)); } catch (err) {}
   }
-  function setSessionToken(token) {
-    try { if (API_BASE && token) localStorage.setItem(TOKEN_KEY, token); } catch (err) {}
+  function clearSession() {
+    session = null;
+    try { localStorage.removeItem(SESSION_KEY); } catch (err) {}
   }
-  function clearSessionToken() {
-    try { localStorage.removeItem(TOKEN_KEY); } catch (err) {}
+  function consumeNext() {
+    try {
+      var next = sessionStorage.getItem('catherine:next');
+      sessionStorage.removeItem('catherine:next');
+      return next || '';
+    } catch (err) { return ''; }
+  }
+
+  var oauthError = '';
+  (function captureOAuthRedirect() {
+    var raw = location.hash || '';
+    if (raw.indexOf('access_token=') < 0 && raw.indexOf('error=') < 0) return;
+    var params = new URLSearchParams(raw.replace(/^#/, ''));
+
+    if (params.get('error')) {
+      oauthError = params.get('error_description') || params.get('error');
+      history.replaceState({}, '', location.pathname + location.search + '#/login');
+      return;
+    }
+
+    session = {
+      access_token: params.get('access_token'),
+      refresh_token: params.get('refresh_token'),
+      expires_at: Date.now() + (parseInt(params.get('expires_in'), 10) || 3600) * 1000
+    };
+    saveSession();
+    var next = consumeNext();
+    history.replaceState({}, '', location.pathname + location.search + '#' + (next || '/hub'));
+  })();
+
+  function signInWithDiscord() {
+    try { sessionStorage.setItem('catherine:next', currentPath()); } catch (err) {}
+    var redirect = location.origin + location.pathname;
+    window.location.href =
+      SUPABASE.url + '/auth/v1/authorize?provider=discord&redirect_to=' + encodeURIComponent(redirect);
+  }
+
+  async function refreshSession() {
+    if (!session || !session.refresh_token) return false;
+    try {
+      var res = await fetch(SUPABASE.url + '/auth/v1/token?grant_type=refresh_token', {
+        method: 'POST',
+        headers: { apikey: SUPABASE.key, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ refresh_token: session.refresh_token })
+      });
+      if (!res.ok) return false;
+      var data = await res.json();
+      session = {
+        access_token: data.access_token,
+        refresh_token: data.refresh_token,
+        expires_at: Date.now() + (parseInt(data.expires_in, 10) || 3600) * 1000
+      };
+      saveSession();
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  async function authReady() {
+    if (!session) return false;
+    if (session.expires_at && Date.now() < session.expires_at - 60000) return true;
+    return refreshSession();
+  }
+
+  async function supaFetch(path, options) {
+    var opts = options || {};
+    var headers = Object.assign({ apikey: SUPABASE.key, Accept: 'application/json' }, opts.headers || {});
+    headers.Authorization = 'Bearer ' + (session ? session.access_token : SUPABASE.key);
+    if (opts.body !== undefined) headers['Content-Type'] = 'application/json';
+    if (opts.prefer) headers.Prefer = opts.prefer;
+
+    var res = await fetch(SUPABASE.url + path, {
+      method: opts.method || 'GET',
+      headers: headers,
+      body: opts.body !== undefined ? JSON.stringify(opts.body) : undefined
+    });
+
+    var text = await res.text();
+    var data = null;
+    if (text) { try { data = JSON.parse(text); } catch (err) { data = text; } }
+
+    if (!res.ok) {
+      var error = new Error(
+        (data && (data.message || data.error_description || data.error || data.msg)) ||
+          'Request failed (' + res.status + ')'
+      );
+      error.status = res.status;
+      error.data = data;
+      throw error;
+    }
+    return data;
+  }
+
+  /** Authenticated request with one refresh + retry when the token expired. */
+  async function api(path, options) {
+    await authReady();
+    try {
+      return await supaFetch(path, options);
+    } catch (err) {
+      if (err.status === 401 && session && session.refresh_token) {
+        if (await refreshSession()) return supaFetch(path, options);
+        clearSession();
+      }
+      throw err;
+    }
+  }
+
+  async function loadMe() {
+    if (!session) return null;
+    if (!(await authReady())) { clearSession(); return null; }
+
+    try {
+      var user = await supaFetch('/auth/v1/user');
+      var profiles = await supabaseArray('/rest/v1/profiles?id=eq.' + user.id + '&select=id,display_name,email,avatar_url,role');
+      var profile = profiles[0] || null;
+      var prefs = await supabaseArray('/rest/v1/user_prefs?owner=eq.' + user.id + '&select=language');
+      var meta = user.user_metadata || {};
+
+      return {
+        id: user.id,
+        email: user.email || '',
+        displayName: (profile && profile.display_name) || meta.full_name || meta.name || meta.preferred_username || 'Friend',
+        avatarUrl: (profile && profile.avatar_url) || meta.avatar_url || '',
+        role: (profile && profile.role) || 'member',
+        language: (prefs[0] && prefs[0].language) || 'en'
+      };
+    } catch (err) {
+      if (err.status === 401) clearSession();
+      throw err;
+    }
+  }
+
+  async function supabaseArray(path, options) {
+    var data = await api(path, options);
+    return Array.isArray(data) ? data : [];
+  }
+
+  async function signOut() {
+    try { await api('/auth/v1/logout', { method: 'POST' }); } catch (err) {}
+    clearSession();
+    state.user = null;
+    state.conversations = [];
+    state.activeId = null;
+    updateNav();
+    navigate('/', { replace: true });
+  }
+
+  // Beam width for the bot's heartbeat; older than this means the PC is away.
+  var BOT_STALE_MS = 90000;
+
+  async function loadBotStatus() {
+    try {
+      var rows = await supabaseArray('/rest/v1/bot_status?id=eq.1&select=online,tag,guilds,model,updated_at');
+      var row = rows[0];
+      if (!row) return { online: false, fresh: false, guilds: 0, model: null };
+      var age = Date.now() - Date.parse(row.updated_at || '');
+      var fresh = Number.isFinite(age) && age < BOT_STALE_MS;
+      return {
+        online: Boolean(row.online) && fresh,
+        fresh: fresh,
+        tag: row.tag,
+        guilds: row.guilds || 0,
+        model: row.model,
+        ageMs: age,
+        error: ''
+      };
+    } catch (err) {
+      return { online: false, fresh: false, guilds: 0, model: null, error: err.message };
+    }
   }
 
   // Self-contained portrait plate, used until real photos are dropped next to
-  // the HTML (catherine-portrait.jpg + optional catherine-1..3.jpg).
+  // the HTML and the site is rebuilt.
   var PLATE_SVG =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">' +
     '<defs><radialGradient id="b" cx="50%" cy="34%" r="78%">' +
@@ -447,9 +623,11 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     '</svg>';
   var PORTRAIT_PLATE = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(PLATE_SVG);
 
+  var FALLBACK_LANGUAGES = [{ code: 'en', name: 'English' }];
+
   var state = {
     user: null,
-    meta: { languages: [], filmography: [] },
+    meta: { languages: FALLBACK_LANGUAGES, filmography: [] },
     conversations: [],
     activeId: null,
     sending: false,
@@ -475,35 +653,14 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     return safe;
   }
 
-  async function api(path, options) {
-    var opts = options || {};
-    var headers = Object.assign({ Accept: 'application/json' }, opts.headers || {});
-    if (opts.body !== undefined) headers['Content-Type'] = 'application/json';
-    var token = sessionToken();
-    if (token) headers.Authorization = 'Bearer ' + token;
-
-    var res = await fetch(API_BASE + path, {
-      method: opts.method || 'GET',
-      headers: headers,
-      body: opts.body !== undefined ? JSON.stringify(opts.body) : undefined,
-      credentials: API_BASE ? 'omit' : 'same-origin'
-    });
-
-    var data = null;
-    try { data = await res.json(); } catch (err) { data = null; }
-    if (!res.ok) {
-      if (res.status === 401 && token) clearSessionToken();
-      var error = new Error((data && data.error) || 'Request failed (' + res.status + ')');
-      error.status = res.status;
-      error.data = data;
-      throw error;
-    }
-    return data || {};
+  function sleep(ms) {
+    return new Promise(function (resolve) { setTimeout(resolve, ms); });
   }
 
   var toastTimer = null;
   function toast(message) {
     var el = $('#toast');
+    if (!el) return;
     el.textContent = message;
     el.classList.add('show');
     clearTimeout(toastTimer);
@@ -511,7 +668,8 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   }
 
   function initials(name) {
-    var parts = String(name || 'C').trim().split(/\s+/);
+    var parts = String(name || 'C').trim().split(/\s+/).filter(Boolean);
+    if (!parts.length) return 'C';
     return (parts[0][0] + (parts[1] ? parts[1][0] : '')).toUpperCase();
   }
 
@@ -533,10 +691,16 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     return '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' + (paths[name] || '') + '</svg>';
   }
 
+  function discordMark() {
+    return '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">' +
+      '<path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.2a14.6 14.6 0 0 0-5.6 0L8.6 3a19.8 19.8 0 0 0-4.9 1.4C.9 8.9.3 13.2.6 17.5a19.9 19.9 0 0 0 6 3l1.3-2a12.6 12.6 0 0 1-2.1-1l.5-.4a14.2 14.2 0 0 0 11.4 0l.5.4a12.6 12.6 0 0 1-2.1 1l1.3 2a19.9 19.9 0 0 0 6-3c.4-5-.8-9.2-3.1-13.1zM8.6 15.3c-1.2 0-2.1-1-2.1-2.3 0-1.3.9-2.3 2.1-2.3 1.2 0 2.1 1 2.1 2.3 0 1.3-.9 2.3-2.1 2.3zm6.8 0c-1.2 0-2.1-1-2.1-2.3 0-1.3.9-2.3 2.1-2.3 1.2 0 2.1 1 2.1 2.3 0 1.3-.9 2.3-2.1 2.3z"/></svg>';
+  }
+
   /* ---------- chrome ---------- */
 
   function updateNav() {
     var box = $('#nav-account');
+    if (!box) return;
     if (state.user) {
       box.innerHTML =
         '<a href="/account">' + esc(state.user.displayName) + '</a>' +
@@ -545,8 +709,9 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     } else {
       box.innerHTML =
         '<a href="/login">Sign in</a>' +
-        '<a class="btn btn-sm" href="/register">Create account</a>';
+        '<a class="btn btn-sm" href="/chat">Talk to Catherine</a>';
     }
+    rewriteLinks($('#site-nav'));
   }
 
   function markNav(path) {
@@ -558,17 +723,17 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   }
 
   async function loadStatus() {
-    try {
-      var data = await api('/api/status');
-      state.status = data;
-      var pill = $('#status-pill');
-      if (!pill) return;
-      var online = data.bot && data.bot.online;
-      pill.classList.toggle('on', !!online);
-      pill.lastElementChild.textContent = online
-        ? 'Catherine is online on Discord'
-        : 'Website online · Discord bot offline';
-    } catch (err) { /* status is cosmetic */ }
+    var status = await loadBotStatus();
+    state.status = status;
+    var pill = $('#status-pill');
+    if (!pill) return;
+    pill.classList.toggle('on', !!status.online);
+    var setupMissing = /relation|does not exist|schema/i.test(status.error || '');
+    pill.lastElementChild.textContent = status.online
+      ? "Catherine is online on Discord and the web"
+      : setupMissing
+        ? 'Supabase setup incomplete — run supabase/schema.sql'
+        : "Catherine's PC is offline — her bot is not running";
   }
 
   /* ---------- pages ---------- */
@@ -632,13 +797,13 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     <section class="block"><div class="wrap">
       <div class="section-head"><p class="eyebrow">More than a chatbot</p>
         <h2>Charm, company, and a genuinely useful brain.</h2>
-        <p>Catherine talks, remembers, looks things up, and keeps the room warm. The same conversation
-        engine powers her website and her Discord presence.</p></div>
+        <p>Catherine talks, remembers, and keeps the room warm. The same conversation engine powers
+        her website and her Discord presence.</p></div>
       <div class="cards">
         <article class="card"><div class="num">01</div><h3>Real conversation</h3><p>She keeps context across a conversation, follows your tone, and answers in nine languages — including Puerto Rican Spanish.</p></article>
         <article class="card"><div class="num">02</div><h3>Film &amp; television</h3><p>Ask about <em>Schitt's Creek</em>, <em>Beetlejuice</em>, <em>Home Alone</em>, <em>SCTV</em>, or a career that spans five decades.</p></article>
         <article class="card"><div class="num">03</div><h3>Discord companion</h3><p>DMs, server conversations, moderation help, anti-spam and anti-raid protection, games, and community activities.</p></article>
-        <article class="card"><div class="num">04</div><h3>Search when it matters</h3><p>When you ask about something current, she can look it up — and she tells you what is a search finding versus what she actually knows.</p></article>
+        <article class="card"><div class="num">04</div><h3>Honest by design</h3><p>She is told to say when a credit, quote, or detail is outside what she knows — and never to invent one to sound convincing.</p></article>
       </div>
     </div></section>
 
@@ -660,22 +825,22 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     <section class="block"><div class="wrap">
       <div class="section-head"><p class="eyebrow">One Catherine, every door</p>
         <h2>Website and Discord share the same mind.</h2>
-        <p>There is no separate website personality and no second brain. Both interfaces call the same
-        conversation, memory, moderation, and knowledge services.</p></div>
+        <p>Your account, history and preferences live in Supabase. Her voice comes from one local
+        model on the bot's PC — no hosted AI service in the loop.</p></div>
       <div class="flow">
-        <div class="flow-node"><h4>Website</h4><p>Chat, history, accounts and settings</p></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node"><h4>Shared services</h4><p>Personality · memory · moderation · knowledge</p></div>
-        <div class="flow-arrow">←</div>
-        <div class="flow-node"><h4>Discord</h4><p>DMs, servers, games and protection</p></div>
+        <div class="flow-node"><h4>Website</h4><p>Sign in with Discord · chat · history</p></div>
+        <div class="flow-arrow">↔</div>
+        <div class="flow-node"><h4>Supabase</h4><p>Auth · Postgres · row-level security</p></div>
+        <div class="flow-arrow">↔</div>
+        <div class="flow-node"><h4>Bot on the PC</h4><p>Discord · local model · no open ports</p></div>
       </div>
     </div></section>
 
     <section class="block"><div class="wrap"><div class="cta-band">
       <p class="eyebrow">The door is open</p><h2>Come say hello.</h2>
-      <p>Create a free account and talk to Catherine on the web, or join her on Discord. No subscription,
+      <p>Sign in with Discord and talk to Catherine on the web, or join her on Discord. No subscription,
       no paywall, no catch.</p>
-      <a class="btn" href="${state.user ? '/hub' : '/register'}">${state.user ? 'Open your hub' : 'Create your free account'}</a>
+      <a class="btn" href="${state.user ? '/hub' : '/login'}">${state.user ? 'Open your hub' : 'Sign in with Discord'}</a>
     </div></div></section>`;
   }
 
@@ -702,8 +867,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 
       <p class="note" style="margin-top:34px;max-width:760px">Catherine AI is instructed to say when a
       credit, co-star, quote, or behind-the-scenes detail is outside this reference rather than inventing
-      one. For current or lesser-known projects, ask her to search — she will label those findings as
-      unverified.</p>
+      one.</p>
       <p style="margin-top:30px"><a class="btn" href="/chat">Ask Catherine about a role</a></p>
     </div></section>`;
   }
@@ -761,16 +925,15 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       <h2>What she is not</h2>
       <p>She is not the real Catherine O'Hara, she does not have her private memories, and she will not
       invent credits, quotes, or behind-the-scenes stories to sound convincing. When she is unsure, she
-      says so. When she searches the web, she labels what she found as a search result rather than
-      confirmed fact.</p>
+      says so.</p>
       <h2>The technology, plainly</h2>
-      <p>Catherine runs on a self-hosted language model on this machine. There is no OpenAI, Anthropic,
-      Gemini, or other hosted AI API in the loop, and no conversation is sent to a third-party AI
-      service. The website and the Discord bot share the same conversation engine, memory, moderation,
-      and knowledge services.</p>
+      <p>Catherine's language model runs locally on the PC that hosts her bot. There is no OpenAI,
+      Anthropic, Gemini, or other hosted AI API in the loop, and no conversation is sent to a
+      third-party AI service. Accounts, conversations, preferences and Discord server settings live in
+      Supabase, which this site talks to directly.</p>
       <ul><li>Node.js and JavaScript throughout — no Python in the active project</li>
-        <li>Discord.js for the bot</li>
-        <li>SQLite now, behind a storage layer designed for a 2027 Supabase migration</li>
+        <li>Discord.js for the bot, with no inbound server or open ports</li>
+        <li>Supabase Auth (Discord sign-in) and Postgres with row-level security</li>
         <li>Local GGUF model inference through llama.cpp</li>
         <li>Local Stable Diffusion image generation (optional)</li></ul>
       <h2>Free, and staying free</h2>
@@ -794,13 +957,13 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         <article class="card"><div class="num">01</div><h3>Conversation</h3><p>DMs, server replies, @mentions, and ongoing conversations with context — including several people in one channel without cross-talk.</p></article>
         <article class="card"><div class="num">02</div><h3>Protection</h3><p>Anti-spam and anti-raid checks, configurable moderation settings, warnings, and an audit log. Administrative actions require the right Discord permissions.</p></article>
         <article class="card"><div class="num">03</div><h3>Games</h3><p>Trivia, word games, guessing games, and interactive challenges with per-server leaderboards.</p></article>
-        <article class="card"><div class="num">04</div><h3>Search</h3><p>Ask her to look something up. She summarizes what she finds and tells you it is a search result, not a verified fact.</p></article>
+        <article class="card"><div class="num">04</div><h3>Memory</h3><p>She keeps the thread of a DM conversation, remembers your language choice, and picks up where you left off.</p></article>
       </div>
       <div class="panel" style="margin-top:34px"><h2>Commands</h2>
         <table class="data"><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody>
           <tr><td><code>!language</code></td><td>Show or change your language</td></tr>
-          <tr><td><code>!search &lt;query&gt;</code></td><td>Look something up on the web</td></tr>
-          <tr><td><code>!image &lt;prompt&gt;</code></td><td>Generate an image locally</td></tr>
+          <tr><td><code>!search &lt;query&gt;</code></td><td>Look something up (when a search provider is configured)</td></tr>
+          <tr><td><code>!image &lt;prompt&gt;</code></td><td>Generate an image locally (optional runtime)</td></tr>
           <tr><td><code>!trivia</code></td><td>Start a trivia round</td></tr>
           <tr><td><code>!game wordchain</code></td><td>Start a word-chain game</td></tr>
           <tr><td><code>!guess</code></td><td>Play a number-guessing game</td></tr>
@@ -848,9 +1011,8 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     return `
     <div class="page-head"><div class="wrap"><p class="eyebrow">The hub</p>
       <h1>Good to see you, ${esc(u.displayName)}.</h1>
-      <p>This is Catherine's front door. Her intelligence runs in the bot backend — this
-      site is the central hub where you talk to her, keep your history, and see exactly
-      what is connected.</p></div></div>
+      <p>This is Catherine's front door. Her intelligence runs on the bot's PC; your account and
+      history live in Supabase, and this page shows exactly what is connected.</p></div></div>
 
     <section class="block"><div class="wrap">
       <div class="stat-grid" id="hub-status">
@@ -884,27 +1046,31 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   }
 
   async function initHub() {
-    var data = await api('/api/hub');
-    var bot = data.catherine.bot || {};
-    var model = data.catherine.modelReady;
+    var status = await loadBotStatus();
+    var conversations = await loadConversations();
+    state.conversations = conversations;
 
     $('#hub-status').innerHTML = [
       {
         k: 'Catherine',
-        v: model ? 'Online' : 'Loading',
-        sub: model ? 'Local model · ' + esc(data.catherine.model) : 'Model not loaded yet',
-        on: model
+        v: status.online ? 'Online' : 'Away',
+        sub: status.online
+          ? 'Local model · ' + esc(status.model || 'Catherine')
+          : 'Start the bot on the PC that has her model',
+        on: status.online
       },
       {
         k: 'Discord bot',
-        v: bot.online ? 'Connected' : 'Offline',
-        sub: bot.online ? (bot.guilds || 0) + ' server(s) · ' + esc(bot.tag || '') : (data.integrations.discord ? 'Token set, bot not running' : 'No Discord token configured'),
-        on: !!bot.online
+        v: status.online ? 'Connected' : 'Offline',
+        sub: status.online
+          ? (status.guilds || 0) + ' server(s) · ' + esc(status.tag || '')
+          : 'No heartbeat from the bot right now',
+        on: status.online
       },
       {
-        k: 'This hub',
-        v: 'Online',
-        sub: 'Up ' + data.catherine.uptimeSeconds + 's · ' + data.counts.messages + ' messages saved',
+        k: 'History',
+        v: conversations.length + ' chat' + (conversations.length === 1 ? '' : 's'),
+        sub: 'Saved in Supabase · private to your account',
         on: true
       }
     ].map(function (c) {
@@ -913,11 +1079,11 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     }).join('');
 
     var integrations = [
-      ['Local AI model', data.integrations.model, model ? 'Loaded and answering' : 'Installed, not loaded yet'],
-      ['Discord bot backend', data.integrations.discord, bot.online ? 'Connected to Discord' : 'Token ' + (data.integrations.discord ? 'set, waiting to connect' : 'not set')],
-      ['Web search', data.integrations.search, data.integrations.search ? 'Search backend connected' : 'Adapter installed — add a search backend to enable'],
-      ['Diane Keaton AI bridge', data.integrations.diane, data.integrations.diane ? 'Bridge configured' : 'Set DIANE_BRIDGE_URL to connect her'],
-      ['Image generation', data.integrations.images, data.integrations.images ? 'Local model available' : 'Optional runtime not installed']
+      ['Discord sign-in', true, 'Connected through Supabase Auth'],
+      ['Supabase', true, 'Accounts, conversations and settings'],
+      ['Local AI model', status.online, status.online ? 'Loaded on the bot PC' : 'Waiting for the bot to come online'],
+      ['Website chat worker', status.online, status.online ? 'Watching for new messages' : 'Offline — start the bot'],
+      ['Diane Keaton AI bridge', false, 'Set DIANE_BRIDGE_URL in .env to connect her']
     ];
 
     $('#hub-integrations').innerHTML = integrations.map(function (row) {
@@ -926,11 +1092,10 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         '<span class="state ' + (row[1] ? 'on' : '') + '">' + (row[1] ? 'On' : 'Off') + '</span></div>';
     }).join('');
 
-    var recents = data.conversations || [];
-    $('#hub-recents').innerHTML = recents.length
-      ? '<ul class="recents">' + recents.map(function (c) {
+    $('#hub-recents').innerHTML = conversations.length
+      ? '<ul class="recents">' + conversations.map(function (c) {
           return '<li><a href="/chat" data-open="' + c.id + '"><span style="color:var(--ink)">' + esc(c.title) +
-            '</span><span>' + (c.message_count || 0) + ' messages</span></a></li>';
+            '</span><span>' + esc((c.updated_at || '').slice(0, 10)) + '</span></a></li>';
         }).join('') + '</ul>'
       : '<p style="color:var(--muted);font-size:14px;margin:0">No conversations yet. Say hello above.</p>';
 
@@ -949,66 +1114,37 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       navigate('/chat');
     });
 
-    if (data.admin) {
+    if (state.user.role === 'admin') {
       $('#hub-status').insertAdjacentHTML('afterend',
         '<div class="panel" style="margin-bottom:24px"><h2>Admin snapshot</h2><p style="color:var(--muted);font-size:14px;margin:0">' +
-        data.admin.users + ' accounts · ' + data.admin.moderationActions + ' moderation actions. ' +
-        '<a href="/admin" style="color:var(--gold-bright)">Open the admin dashboard →</a></p></div>');
+        'Open the admin dashboard for accounts and the moderation log. ' +
+        '<a href="/admin" style="color:var(--gold-bright)">Open admin →</a></p></div>');
     }
   }
 
-  /* ---------- auth pages ---------- */
+  /* ---------- auth page ---------- */
 
-  function authPage(mode) {
-    var isRegister = mode === 'register';
+  function authPage() {
     return `
     <section class="auth-shell"><div class="auth-card">
-      <p class="eyebrow">${isRegister ? 'Join Catherine' : 'Welcome back'}</p>
-      <h1>${isRegister ? 'Create your account' : 'Sign in'}</h1>
-      <p class="sub">${isRegister ? 'Free, always. No subscription, no paywall.' : 'Catherine has been waiting for you.'}</p>
-      <div class="form-error" id="auth-error"></div>
-      <form id="auth-form" novalidate>
-        ${isRegister ? '<div class="field"><label for="name">What should she call you?</label><input id="name" name="displayName" autocomplete="nickname" maxlength="40" required></div>' : ''}
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="${isRegister ? 'new-password' : 'current-password'}" minlength="8" required>
-          ${isRegister ? '<div class="hint">At least 8 characters.</div>' : ''}</div>
-        <button class="btn" style="width:100%" type="submit">${isRegister ? 'Create account' : 'Sign in'}</button>
-      </form>
-      <p class="auth-alt">${isRegister
-        ? 'Already have an account? <a href="/login">Sign in</a>'
-        : 'New here? <a href="/register">Create a free account</a>'}</p>
+      <p class="eyebrow">Welcome</p>
+      <h1>Sign in</h1>
+      <p class="sub">Discord is the front door. Google and X are on the way.</p>
+      <div class="form-error${oauthError ? ' show' : ''}" id="auth-error">${esc(oauthError)}</div>
+      <button class="btn discord-btn" id="discord-login" type="button">${discordMark()} Continue with Discord</button>
+      <div class="provider-list">
+        <div class="provider"><span>Google</span><em>Coming soon</em></div>
+        <div class="provider"><span>X</span><em>Coming soon</em></div>
+      </div>
+      <p class="auth-note">Your Discord name and avatar identify your account. Conversations are stored
+      in Supabase and are private to you.</p>
+      <p class="auth-alt">Free, always. No subscription, no paywall.</p>
     </div></section>`;
   }
 
-  async function initAuth(mode) {
-    var form = $('#auth-form');
-    var error = $('#auth-error');
-    form.addEventListener('submit', async function (event) {
-      event.preventDefault();
-      error.classList.remove('show');
-      var button = form.querySelector('button[type=submit]');
-      button.disabled = true;
-      var payload = {
-        email: form.email.value.trim(),
-        password: form.password.value
-      };
-      if (mode === 'register') payload.displayName = form.displayName.value.trim();
-      try {
-        var data = await api(mode === 'register' ? '/api/auth/register' : '/api/auth/login', {
-          method: 'POST', body: payload
-        });
-        state.user = data.user;
-        setSessionToken(data.token);
-        updateNav();
-        var next = new URLSearchParams(currentSearch()).get('next');
-        navigate(next && next.charAt(0) === '/' ? next : '/hub', { replace: true });
-      } catch (err) {
-        error.textContent = err.message;
-        error.classList.add('show');
-      } finally {
-        button.disabled = false;
-      }
-    });
+  function initAuth() {
+    var button = $('#discord-login');
+    if (button) button.addEventListener('click', signInWithDiscord);
   }
 
   /* ---------- chat ---------- */
@@ -1020,9 +1156,9 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         <div class="empty-state" style="padding:0">
           <div class="monogram">C</div>
           <h2>She's right through here.</h2>
-          <p>Sign in to talk with Catherine, keep your conversation history, and pick up where you left off.</p>
-          <p><a class="btn" href="/login?next=/chat">Sign in</a>
-          <a class="btn btn-ghost" href="/register?next=/chat">Create a free account</a></p>
+          <p>Sign in with Discord to talk with Catherine, keep your conversation history, and pick up
+          where you left off.</p>
+          <p><a class="btn" href="/login">Sign in with Discord</a></p>
         </div>
       </div></section>`;
     }
@@ -1043,7 +1179,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         <header class="chat-head">
           <button class="icon-btn side-toggle" id="side-toggle" aria-label="Conversations">${icon('menu')}</button>
           <h1 id="chat-title">New conversation</h1>
-          <span class="tag">${esc(langName(state.user.language))}</span>
+          <span class="tag" id="chat-status">${esc(langName(state.user.language))}</span>
         </header>
         <div class="chat-body" id="chat-body"><div class="messages" id="messages"></div></div>
         <div class="composer-wrap">
@@ -1084,6 +1220,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 
   function appendMessage(message) {
     var list = $('#messages');
+    if (!list) return;
     var empty = $('#chat-empty');
     if (empty) empty.remove();
     list.insertAdjacentHTML('beforeend', messageHtml(message));
@@ -1134,27 +1271,52 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     if (list) list.innerHTML = convoListHtml();
   }
 
+  async function loadConversations() {
+    if (!state.user) return [];
+    return supabaseArray(
+      '/rest/v1/conversations?owner=eq.' + state.user.id +
+      '&select=id,title,created_at,updated_at&order=updated_at.desc'
+    );
+  }
+
   async function refreshConversations() {
     try {
-      var data = await api('/api/conversations');
-      state.conversations = data.conversations || [];
+      state.conversations = await loadConversations();
       renderConvoList();
     } catch (err) { /* non-fatal */ }
+  }
+
+  async function createConversation() {
+    var rows = await api('/rest/v1/conversations', {
+      method: 'POST',
+      body: { owner: state.user.id, title: 'New conversation' },
+      prefer: 'return=representation'
+    });
+    return rows[0];
+  }
+
+  async function loadMessages(id) {
+    return supabaseArray(
+      '/rest/v1/messages?conversation_id=eq.' + id +
+      '&select=id,role,content,created_at&order=id.asc'
+    );
   }
 
   async function openConversation(id) {
     state.activeId = id;
     renderConvoList();
     var list = $('#messages');
+    if (!list) return;
     list.innerHTML = '';
     try {
-      var data = await api('/api/conversations/' + id);
-      $('#chat-title').textContent = data.conversation.title;
-      if (!data.messages.length) {
+      var messages = await loadMessages(id);
+      var current = state.conversations.filter(function (c) { return c.id === id; })[0];
+      $('#chat-title').textContent = current ? current.title : 'Conversation';
+      if (!messages.length) {
         list.innerHTML = emptyChatHtml();
         bindChips();
       } else {
-        data.messages.forEach(function (m) { list.insertAdjacentHTML('beforeend', messageHtml(m)); });
+        messages.forEach(function (m) { list.insertAdjacentHTML('beforeend', messageHtml(m)); });
         scrollChat();
       }
     } catch (err) {
@@ -1175,6 +1337,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     $$('.chip').forEach(function (chip) {
       chip.addEventListener('click', function () {
         var input = $('#input');
+        if (!input) return;
         input.value = chip.getAttribute('data-prompt');
         input.focus();
       });
@@ -1186,26 +1349,77 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     if (side) side.classList.remove('open');
   }
 
+  /** Polls one chat job until the bot finishes it, the bot disappears, or time runs out. */
+  async function waitForJob(id) {
+    var started = Date.now();
+    var deadline = started + 180000;
+
+    while (Date.now() < deadline) {
+      await sleep(1500);
+      var rows = await supabaseArray('/rest/v1/chat_jobs?id=eq.' + id + '&select=status,reply,error');
+      var job = rows[0];
+      if (!job) throw new Error('That message was removed before Catherine could answer.');
+      if (job.status === 'done') return job.reply || '';
+      if (job.status === 'error') throw new Error(job.error || 'Catherine hit a snag.');
+
+      if (job.status === 'queued' && Date.now() - started > 25000) {
+        var status = await loadBotStatus();
+        if (!status.online) {
+          try { await api('/rest/v1/chat_jobs?id=eq.' + id, { method: 'DELETE' }); } catch (err) {}
+          throw new Error("Catherine's PC went offline before she could answer. Start the bot and try again.");
+        }
+      }
+    }
+
+    throw new Error('Catherine is taking too long to answer. Start the bot if it is not running, then try again.');
+  }
+
   async function sendMessage(content) {
     if (state.sending) return;
     var text = String(content || '').trim();
     if (!text) return;
 
+    appendMessage({ role: 'user', content: text });
+
+    var status = await loadBotStatus();
+    if (!status.online) {
+      var setupMissing = /relation|does not exist|schema/i.test(status.error || '');
+      appendSystem(
+        setupMissing
+          ? 'The Supabase tables are not set up yet. Run supabase/schema.sql in the Supabase SQL ' +
+            'Editor, then reload this page.'
+          : "Catherine's PC is offline right now. The bot has to be running on the computer with her " +
+            'model before she can answer here.'
+      );
+      return;
+    }
+
     state.sending = true;
     updateSendState();
-    appendMessage({ role: 'user', content: text });
     showTyping();
 
     try {
       if (!state.activeId) {
-        var created = await api('/api/conversations', { method: 'POST', body: {} });
-        state.activeId = created.conversation.id;
+        var conversation = await createConversation();
+        state.activeId = conversation.id;
+        state.conversations.unshift(conversation);
+        renderConvoList();
       }
-      var data = await api('/api/conversations/' + state.activeId + '/messages', {
-        method: 'POST', body: { content: text }
+
+      var jobs = await api('/rest/v1/chat_jobs', {
+        method: 'POST',
+        body: {
+          conversation_id: state.activeId,
+          owner: state.user.id,
+          prompt: text
+        },
+        prefer: 'return=representation'
       });
+      var job = jobs[0];
+
+      var reply = await waitForJob(job.id);
       hideTyping();
-      appendMessage({ role: 'assistant', content: data.reply });
+      appendMessage({ role: 'assistant', content: reply });
       await refreshConversations();
       var current = state.conversations.filter(function (c) { return c.id === state.activeId; })[0];
       if (current) $('#chat-title').textContent = current.title;
@@ -1226,7 +1440,17 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   }
 
   async function initChat() {
+    if (!state.user || !$('#composer')) return;
+
     await refreshConversations();
+    var status = await loadBotStatus();
+    var pill = $('#chat-status');
+    if (pill) {
+      pill.textContent = status.online ? 'Online' : 'PC offline';
+      pill.style.borderColor = status.online ? '' : 'rgba(217,123,108,.45)';
+      pill.style.color = status.online ? '' : '#e6a99d';
+    }
+
     var newBtn = $('#new-chat');
     if (newBtn) newBtn.addEventListener('click', newConversation);
 
@@ -1240,7 +1464,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         event.stopPropagation();
         if (!confirm('Delete this conversation?')) return;
         try {
-          await api('/api/conversations/' + del.getAttribute('data-del'), { method: 'DELETE' });
+          await api('/rest/v1/conversations?id=eq.' + del.getAttribute('data-del'), { method: 'DELETE' });
           if (state.activeId === del.getAttribute('data-del')) newConversation();
           await refreshConversations();
           toast('Conversation deleted.');
@@ -1294,7 +1518,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   /* ---------- account ---------- */
 
   function accountPage() {
-    var options = (state.meta.languages || []).map(function (l) {
+    var options = (state.meta.languages || FALLBACK_LANGUAGES).map(function (l) {
       return '<option value="' + l.code + '"' + (state.user.language === l.code ? ' selected' : '') + '>' + esc(l.name) + '</option>';
     }).join('');
 
@@ -1317,16 +1541,16 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       <div>
         <div class="panel"><h2>Account</h2>
           <ul class="meta-list">
-            <li><span class="k">Email</span><span class="v">${esc(state.user.email)}</span></li>
+            <li><span class="k">Signed in with</span><span class="v">Discord</span></li>
+            <li><span class="k">Email</span><span class="v">${esc(state.user.email || '—')}</span></li>
             <li><span class="k">Role</span><span class="v">${esc(state.user.role)}</span></li>
-            <li><span class="k">Discord</span><span class="v">Same Catherine, shared memory style</span></li>
           </ul>
         </div>
         <div class="panel"><h2>Session</h2>
           <p style="color:var(--muted);font-size:14px">Signing out ends this browser session. Your conversations stay saved.</p>
           <button class="btn btn-ghost" id="logout">Sign out</button>
         </div>
-        ${state.user.role === 'admin' ? '<div class="panel"><h2>Admin</h2><p style="color:var(--muted);font-size:14px">You have access to Catherine\'s admin tools.</p><a class="btn btn-ghost" href="/admin">Open admin</a></div>' : ''}
+        ${state.user.role === 'admin' ? '<div class="panel"><h2>Admin</h2><p style="color:var(--muted);font-size:14px">You have access to Catherine’s admin overview.</p><a class="btn btn-ghost" href="/admin">Open admin</a></div>' : ''}
       </div>
     </div></section>`;
   }
@@ -1339,12 +1563,22 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       error.classList.remove('show');
       var button = form.querySelector('button[type=submit]');
       button.disabled = true;
+      var displayName = form.displayName.value.trim();
+      var language = form.language.value;
       try {
-        var data = await api('/api/me', {
+        var rows = await api('/rest/v1/profiles?id=eq.' + state.user.id, {
           method: 'PATCH',
-          body: { displayName: form.displayName.value.trim(), language: form.language.value }
+          body: { display_name: displayName },
+          prefer: 'return=representation'
         });
-        state.user = data.user;
+        await api('/rest/v1/user_prefs?on_conflict=owner', {
+          method: 'POST',
+          body: { owner: state.user.id, language: language },
+          prefer: 'resolution=merge-duplicates,return=minimal'
+        });
+        var profile = rows[0] || {};
+        state.user.displayName = profile.display_name || displayName;
+        state.user.language = language;
         updateNav();
         toast('Saved.');
         render();
@@ -1354,15 +1588,8 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         button.disabled = false;
       }
     });
-    $('#logout').addEventListener('click', async function () {
-      await api('/api/auth/logout', { method: 'POST' }).catch(function () {});
-      clearSessionToken();
-      state.user = null;
-      state.conversations = [];
-      state.activeId = null;
-      updateNav();
-      navigate('/', { replace: true });
-    });
+
+    $('#logout').addEventListener('click', signOut);
   }
 
   /* ---------- admin ---------- */
@@ -1370,55 +1597,55 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   function adminPage() {
     return `
     <div class="page-head"><div class="wrap"><p class="eyebrow">Kurrasch Systems Studios</p>
-      <h1>Admin</h1><p>Catherine's account, conversation and moderation overview.</p></div></div>
+      <h1>Admin</h1><p>Accounts and recent moderation activity, read straight from Supabase.</p></div></div>
     <section class="block"><div class="wrap">
       <div class="stat-grid" id="admin-stats"><div class="stat"><div class="k">Loading</div><div class="v">…</div></div></div>
       <div class="panel"><h2>Accounts</h2><div id="admin-users"><p class="muted">Loading…</p></div></div>
       <div class="panel"><h2>Recent moderation</h2><div id="admin-mods"><p class="muted">Loading…</p></div></div>
+      <p class="note" style="margin-top:24px">Roles are deliberately not editable from the site.
+      Change them in Supabase → Table Editor → profiles, so the API can never hand out admin access.</p>
     </div></section>`;
   }
 
   async function initAdmin() {
     try {
-      var overview = await api('/api/admin/overview');
+      var profiles = await supabaseArray(
+        '/rest/v1/profiles?select=id,display_name,email,role,created_at&order=created_at.asc&limit=200'
+      );
+      var admins = profiles.filter(function (p) { return p.role === 'admin'; }).length;
+
       $('#admin-stats').innerHTML = [
-        ['Accounts', overview.users], ['Conversations', overview.conversations],
-        ['Messages', overview.messages], ['Moderation actions', overview.moderationActions]
+        ['Accounts', profiles.length],
+        ['Admins', admins],
+        ['Profiles with an email', profiles.filter(function (p) { return Boolean(p.email); }).length],
+        ['Moderation rows', '—']
       ].map(function (pair) {
         return '<div class="stat"><div class="k">' + pair[0] + '</div><div class="v">' + pair[1] + '</div></div>';
       }).join('');
 
-      var users = await api('/api/admin/users');
       $('#admin-users').innerHTML =
         '<table class="data"><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Joined</th></tr></thead><tbody>' +
-        users.users.map(function (u) {
-          return '<tr><td>' + esc(u.display_name) + '</td><td>' + esc(u.email) + '</td><td>' +
-            '<select data-role="' + u.id + '"><option value="member"' + (u.role === 'member' ? ' selected' : '') +
-            '>member</option><option value="admin"' + (u.role === 'admin' ? ' selected' : '') + '>admin</option></select>' +
-            '</td><td>' + esc(u.created_at) + '</td></tr>';
+        profiles.map(function (u) {
+          return '<tr><td>' + esc(u.display_name) + '</td><td>' + esc(u.email || '—') + '</td><td>' +
+            esc(u.role) + '</td><td>' + esc((u.created_at || '').slice(0, 10)) + '</td></tr>';
         }).join('') + '</tbody></table>';
 
-      $('#admin-users').addEventListener('change', async function (event) {
-        var select = event.target.closest('[data-role]');
-        if (!select) return;
-        try {
-          await api('/api/admin/users/' + select.getAttribute('data-role'), {
-            method: 'PATCH', body: { role: select.value }
-          });
-          toast('Role updated.');
-        } catch (err) { toast(err.message); }
-      });
-
-      var mods = await api('/api/admin/moderation');
-      $('#admin-mods').innerHTML = mods.entries.length
+      var mods = await supabaseArray(
+        '/rest/v1/moderation_log?select=action,user_id,reason,created_at&order=created_at.desc&limit=25'
+      );
+      $('#admin-mods').innerHTML = mods.length
         ? '<table class="data"><thead><tr><th>Action</th><th>User</th><th>Reason</th><th>When</th></tr></thead><tbody>' +
-          mods.entries.map(function (m) {
+          mods.map(function (m) {
             return '<tr><td>' + esc(m.action) + '</td><td>' + esc(m.user_id) + '</td><td>' + esc(m.reason || '—') +
-              '</td><td>' + esc(m.created_at) + '</td></tr>';
+              '</td><td>' + esc((m.created_at || '').slice(0, 16).replace('T', ' ')) + '</td></tr>';
           }).join('') + '</tbody></table>'
         : '<p class="muted">Nothing logged yet.</p>';
+
+      var stats = $$('#admin-stats .stat');
+      if (stats[3]) stats[3].querySelector('.v').textContent = String(mods.length) + '+';
     } catch (err) {
-      $('#admin-stats').innerHTML = '<div class="stat"><div class="k">Error</div><div class="v" style="font-size:18px">' + esc(err.message) + '</div></div>';
+      $('#admin-stats').innerHTML = '<div class="stat"><div class="k">Error</div><div class="v" style="font-size:18px">' +
+        esc(err.message) + '</div></div>';
     }
   }
 
@@ -1433,30 +1660,23 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     '/about': { page: aboutPage, title: 'About the project' },
     '/community': { page: communityPage, title: 'Discord community' },
     '/games': { page: gamesPage, title: 'Games & leaderboards' },
-    '/login': { page: function () { return authPage('login'); }, title: 'Sign in', init: function () { return initAuth('login'); } },
-    '/register': { page: function () { return authPage('register'); }, title: 'Create account', init: function () { return initAuth('register'); } },
+    '/login': { page: authPage, title: 'Sign in', init: initAuth },
+    '/register': { page: authPage, title: 'Sign in', init: initAuth },
     '/account': { page: accountPage, title: 'Settings', init: initAccount, auth: true },
     '/admin': { page: adminPage, title: 'Admin', init: initAdmin, auth: true, admin: true }
   };
 
   function currentPath() {
-    if (STATIC_MODE) {
-      var hash = location.hash.replace(/^#/, '');
-      var route = hash.split('?')[0] || '/';
-      if (route.charAt(0) !== '/') route = '/' + route;
-      return route.replace(/\/+$/, '') || '/';
-    }
-    var path = location.pathname.replace(/\/+$/, '');
-    return path || '/';
+    var hash = location.hash.replace(/^#/, '');
+    var route = hash.split('?')[0] || '/';
+    if (route.charAt(0) !== '/') route = '/' + route;
+    return route.replace(/\/+$/, '') || '/';
   }
 
   function currentSearch() {
-    if (STATIC_MODE) {
-      var hash = location.hash;
-      var index = hash.indexOf('?');
-      return index >= 0 ? hash.slice(index) : '';
-    }
-    return location.search;
+    var hash = location.hash;
+    var index = hash.indexOf('?');
+    return index >= 0 ? hash.slice(index) : '';
   }
 
   function rewriteLinks(root) {
@@ -1468,26 +1688,18 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 
   function navigate(path, options) {
     var opts = options || {};
+    var hash = '#' + path;
 
-    if (STATIC_MODE) {
-      var hash = '#' + path;
-      if (location.hash === hash) {
-        render();
-        return;
-      }
-      if (opts.replace) {
-        history.replaceState({}, '', location.pathname + location.search + hash);
-        render();
-      } else {
-        location.hash = path;
-      }
+    if (location.hash === hash) {
+      render();
       return;
     }
-
-    if (path === location.pathname + location.search) return;
-    if (opts.replace) history.replaceState({}, '', path);
-    else history.pushState({}, '', path);
-    render();
+    if (opts.replace) {
+      history.replaceState({}, '', location.pathname + location.search + hash);
+      render();
+    } else {
+      location.hash = path;
+    }
   }
 
   async function render() {
@@ -1497,7 +1709,6 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     if (nav) nav.classList.remove('open');
 
     if (route && route.auth && !state.user) {
-      history.replaceState({}, '', '/login?next=' + encodeURIComponent(path));
       path = '/login';
       route = ROUTES['/login'];
     }
@@ -1510,7 +1721,6 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     app.innerHTML = route ? route.page() : notFoundPage();
     document.title = (route ? route.title : 'Page not found') + " · Catherine O'Hara AI";
     markNav(path);
-
     rewriteLinks(app);
 
     if (route && route.init) {
@@ -1532,7 +1742,6 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 
   /** Picks up photos the owner drops next to the HTML, if present. */
   async function probePortraits() {
-    // A single-file build (npm run build:static) embeds the photos here.
     var embedded = window.CATHERINE_IMAGES;
     if (embedded && embedded.portrait) {
       state.photo = embedded.portrait;
@@ -1578,20 +1787,21 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     window.addEventListener('hashchange', function () { render(); });
     rewriteLinks(document);
 
-    try {
-      var me = await api('/api/me');
-      state.user = me.user;
-    } catch (err) { state.user = null; }
-
-    // The single-file build embeds the career data so the filmography works
-    // even without a backend; live /api/meta still wins when it is reachable.
-    var embedded = window.CATHERINE_DATA || {};
-    try {
-      var meta = await api('/api/meta');
-      state.meta = Object.assign({ languages: [], filmography: [] }, embedded, meta);
-    } catch (err) {
-      state.meta = Object.assign({ languages: [], filmography: [] }, embedded);
+    if (session) {
+      try {
+        state.user = await loadMe();
+      } catch (err) {
+        state.user = null;
+        if (/relation|does not exist|schema/i.test(err.message || '')) {
+          toast('Supabase setup incomplete: run supabase/schema.sql, then reload.');
+        }
+      }
     }
+
+    state.meta = Object.assign(
+      { languages: FALLBACK_LANGUAGES, filmography: [] },
+      window.CATHERINE_DATA || {}
+    );
 
     updateNav();
     loadStatus();
