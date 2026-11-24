@@ -632,8 +632,9 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       state.guest = false;
       if (err.status === 422 || /anonymous|disabled|not enabled/i.test(err.message || '')) {
         throw new Error(
-          'Guest chat is not switched on yet. In Supabase, open Authentication → Sign In / Providers ' +
-          'and enable Anonymous sign-ins — or sign in with Discord.'
+          'Guest chat needs Supabase anonymous sign-ins, and this project has them switched off. ' +
+          'In Supabase open Authentication → Sign In / Providers → turn on “Allow anonymous ' +
+          'sign-ins”, then reload — or sign in with Discord.'
         );
       }
       throw err;
