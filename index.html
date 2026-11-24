@@ -631,10 +631,8 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       clearSession();
       state.guest = false;
       if (err.status === 422 || /anonymous|disabled|not enabled/i.test(err.message || '')) {
-        throw new Error(
-          'Guest chat needs Supabase anonymous sign-ins, and this project has them switched off. ' +
-          'In Supabase open Authentication → Sign In / Providers → turn on “Allow anonymous ' +
-          'sign-ins”, then reload — or sign in with Discord.'
+                throw new Error(
+          'Guest chat is unavailable right now. Sign in with Discord, or try again in a little while.'
         );
       }
       throw err;
@@ -813,12 +811,9 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     var pill = $('#status-pill');
     if (!pill) return;
     pill.classList.toggle('on', !!status.online);
-    var setupMissing = /relation|does not exist|schema/i.test(status.error || '');
     pill.lastElementChild.textContent = status.online
-      ? "Catherine is online on Discord and the web"
-      : setupMissing
-        ? 'Supabase setup incomplete — run supabase/schema.sql'
-        : "Catherine's PC is offline — her bot is not running";
+      ? 'Catherine is online'
+      : 'Catherine is away right now';
   }
 
   /* ---------- pages ---------- */
@@ -919,14 +914,12 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     <section class="block"><div class="wrap">
       <div class="section-head"><p class="eyebrow">One Catherine, every door</p>
         <h2>Website and Discord share the same mind.</h2>
-        <p>Your account, history and preferences live in Supabase. Her voice comes from one local
-        model on the bot's PC — no hosted AI service in the loop.</p></div>
+        <p>Talk to her here or on Discord — the same personality, the same memory of your
+        conversation, and everything private to you.</p></div>
       <div class="flow">
         <div class="flow-node"><h4>Website</h4><p>Sign in with Discord · chat · history</p></div>
         <div class="flow-arrow">↔</div>
-        <div class="flow-node"><h4>Supabase</h4><p>Auth · Postgres · row-level security</p></div>
-        <div class="flow-arrow">↔</div>
-        <div class="flow-node"><h4>Bot on the PC</h4><p>Discord · local model · no open ports</p></div>
+        <div class="flow-node"><h4>Discord</h4><p>DMs · mentions · games · moderation</p></div>
       </div>
     </div></section>
 
@@ -1020,16 +1013,14 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       <p>She is not the real Catherine O'Hara, she does not have her private memories, and she will not
       invent credits, quotes, or behind-the-scenes stories to sound convincing. When she is unsure, she
       says so.</p>
-      <h2>The technology, plainly</h2>
-      <p>Catherine's language model runs locally on the PC that hosts her bot. There is no OpenAI,
-      Anthropic, Gemini, or other hosted AI API in the loop, and no conversation is sent to a
-      third-party AI service. Accounts, conversations, preferences and Discord server settings live in
-      Supabase, which this site talks to directly.</p>
-      <ul><li>Node.js and JavaScript throughout — no Python in the active project</li>
-        <li>Discord.js for the bot, with no inbound server or open ports</li>
-        <li>Supabase Auth (Discord sign-in) and Postgres with row-level security</li>
-        <li>Local GGUF model inference through llama.cpp</li>
-        <li>Local Stable Diffusion image generation (optional)</li></ul>
+      <h2>How she works</h2>
+      <p>Catherine is a conversational AI built for this tribute. Nothing you tell her is sent to
+      OpenAI, Anthropic, Gemini, or another hosted AI service. Your account, conversations and
+      preferences are private to you.</p>
+      <ul><li>JavaScript and Node.js throughout — no Python in the active project</li>
+        <li>A Discord companion for chat, games and moderation</li>
+        <li>Private accounts and conversation history</li>
+        <li>Image generation on request</li></ul>
       <h2>Free, and staying free</h2>
       <p>Catherine is free to use. There are no subscriptions, no paywalls, and no mandatory paid
       access — the same promise as her companion project, Diane Keaton AI.</p>
@@ -1105,8 +1096,8 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     return `
     <div class="page-head"><div class="wrap"><p class="eyebrow">The hub</p>
       <h1>Good to see you, ${esc(u.displayName)}.</h1>
-      <p>This is Catherine's front door. Her intelligence runs on the bot's PC; your account and
-      history live in Supabase, and this page shows exactly what is connected.</p></div></div>
+      <p>This is Catherine's front door. Your account, conversations and preferences live here,
+      private to you.</p></div></div>
 
     <section class="block"><div class="wrap">
       <div class="stat-grid" id="hub-status">
@@ -1148,9 +1139,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
       {
         k: 'Catherine',
         v: status.online ? 'Online' : 'Away',
-        sub: status.online
-          ? 'Local model · ' + esc(status.model || 'Catherine')
-          : 'Start the bot on the PC that has her model',
+        sub: status.online ? 'Ready to talk' : 'Away right now',
         on: status.online
       },
       {
@@ -1158,13 +1147,13 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         v: status.online ? 'Connected' : 'Offline',
         sub: status.online
           ? (status.guilds || 0) + ' server(s) · ' + esc(status.tag || '')
-          : 'No heartbeat from the bot right now',
+          : 'Offline right now',
         on: status.online
       },
       {
         k: 'History',
         v: conversations.length + ' chat' + (conversations.length === 1 ? '' : 's'),
-        sub: 'Saved in Supabase · private to your account',
+        sub: 'Saved privately to your account',
         on: true
       }
     ].map(function (c) {
@@ -1173,11 +1162,11 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     }).join('');
 
     var integrations = [
-      ['Discord sign-in', true, 'Connected through Supabase Auth'],
-      ['Supabase', true, 'Accounts, conversations and settings'],
-      ['Local AI model', status.online, status.online ? 'Loaded on the bot PC' : 'Waiting for the bot to come online'],
-      ['Website chat worker', status.online, status.online ? 'Watching for new messages' : 'Offline — start the bot'],
-      ['Diane Keaton AI bridge', false, 'Set DIANE_BRIDGE_URL in .env to connect her']
+      ['Discord sign-in', true, 'Connected'],
+      ['Your account', true, 'Conversations and settings'],
+      ["Catherine's voice", status.online, status.online ? 'Ready' : 'Away right now'],
+      ['Website chat', status.online, status.online ? 'Ready' : 'Offline right now'],
+      ['Diane Keaton AI bridge', false, 'Not connected']
     ];
 
     $('#hub-integrations').innerHTML = integrations.map(function (row) {
@@ -1223,8 +1212,8 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         <div class="provider"><span>Google</span><em>Coming soon</em></div>
         <div class="provider"><span>X</span><em>Coming soon</em></div>
       </div>
-      <p class="auth-note">Your Discord name and avatar identify your account. Conversations are stored
-      in Supabase and are private to you.</p>
+      <p class="auth-note">Your Discord name and avatar identify your account. Your conversations are
+      private to you.</p>
       <p class="auth-alt"><a href="/chat">Continue as a guest</a> — no account needed, and nothing is
       saved. Sign in whenever you want history.</p>
       <p class="auth-alt">Free, always. No subscription, no paywall.</p>
@@ -1471,12 +1460,12 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         var status = await loadBotStatus();
         if (!status.online) {
           try { await api('/rest/v1/chat_jobs?id=eq.' + id, { method: 'DELETE' }); } catch (err) {}
-          throw new Error("Catherine's PC went offline before she could answer. Start the bot and try again.");
+          throw new Error('Catherine went quiet before she could answer. Please try again in a little while.');
         }
       }
     }
 
-    throw new Error('Catherine is taking too long to answer. Start the bot if it is not running, then try again.');
+    throw new Error('Catherine is taking longer than usual. Please try again in a little while.');
   }
 
   async function sendMessage(content) {
@@ -1488,14 +1477,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
 
     var status = await loadBotStatus();
     if (!status.online) {
-      var setupMissing = /relation|does not exist|schema/i.test(status.error || '');
-      appendSystem(
-        setupMissing
-          ? 'The Supabase tables are not set up yet. Run supabase/schema.sql in the Supabase SQL ' +
-            'Editor, then reload this page.'
-          : "Catherine's PC is offline right now. The bot has to be running on the computer with her " +
-            'model before she can answer here.'
-      );
+      appendSystem('Catherine is away right now. Please try again in a little while.');
       return;
     }
 
@@ -1552,7 +1534,7 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
     var status = await loadBotStatus();
     var pill = $('#chat-status');
     if (pill) {
-      pill.textContent = status.online ? 'Online' : 'PC offline';
+      pill.textContent = status.online ? 'Online' : 'Away';
       pill.style.borderColor = status.online ? '' : 'rgba(217,123,108,.45)';
       pill.style.color = status.online ? '' : '#e6a99d';
     }
@@ -1709,13 +1691,12 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
   function adminPage() {
     return `
     <div class="page-head"><div class="wrap"><p class="eyebrow">Game Killers Studio</p>
-      <h1>Admin</h1><p>Accounts and recent moderation activity, read straight from Supabase.</p></div></div>
+      <h1>Admin</h1><p>Accounts and recent moderation activity.</p></div></div>
     <section class="block"><div class="wrap">
       <div class="stat-grid" id="admin-stats"><div class="stat"><div class="k">Loading</div><div class="v">…</div></div></div>
       <div class="panel"><h2>Accounts</h2><div id="admin-users"><p class="muted">Loading…</p></div></div>
       <div class="panel"><h2>Recent moderation</h2><div id="admin-mods"><p class="muted">Loading…</p></div></div>
-      <p class="note" style="margin-top:24px">Roles are deliberately not editable from the site.
-      Change them in Supabase → Table Editor → profiles, so the API can never hand out admin access.</p>
+      <p class="note" style="margin-top:24px">Roles are deliberately not editable from the site.</p>
     </div></section>`;
   }
 
@@ -1946,9 +1927,6 @@ table.data select{background:#0b0b0d;border:1px solid var(--line);color:var(--in
         state.user = await loadMe();
       } catch (err) {
         state.user = null;
-        if (/relation|does not exist|schema/i.test(err.message || '')) {
-          toast('Supabase setup incomplete: run supabase/schema.sql, then reload.');
-        }
       }
     }
 
